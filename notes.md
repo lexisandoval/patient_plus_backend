@@ -8,7 +8,7 @@ MODELS:
   - has_many emergency_contacts
   - has_many medications
   - has_many conditions
-  - has_many doctors
+  - has_many doctors through medication
 
 2. Medication
   • name
@@ -22,7 +22,7 @@ MODELS:
   • phone number
   • specialty
   • location
-  - has_many patients
+  - has_many users
   - has_many medications (prescribes many meds)
 
 4. Condition

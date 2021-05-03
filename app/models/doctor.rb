@@ -1,6 +1,6 @@
 class Doctor < ApplicationRecord
 
-  has_many :patients
   has_many :medications
+  has_many :users, through: :medications
 
 end
