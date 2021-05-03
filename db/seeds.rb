@@ -1,3 +1,9 @@
-lexi = User.create(name: "Lexi", username: "lexisandoval", email: "lexi.sandoval9@gmail.com", password: "password")
+laura = User.create(name: "Laura Copeland", username: "lauracopeland", email: "laura.copeland@gmail.com", password: "password")
 
-# d = Medication.create(name: "Di", prescription: "90 mg", user_id: 1)
+gregory = Doctor.create(name: "Gregory Zimmerman", phone_number: "214-749-8244", specialty: "Lipidologist", location: "Lakeland General Hospital")
+
+cholesterol = Condition.create(name: "High Cholesterol", user_id: 1)
+
+elizabeth = Emergencycontact.create(name: "Elizabeth Copeland", phone_number: "678-999-8212", relationship: "mother", user_id: 1)
+
+simvastatin = Medication.create(name: "Simvastatin", prescription: "20 mg", user_id: 1, doctor_id: 1, condition_id: 1)
