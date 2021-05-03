@@ -5,7 +5,7 @@ MODELS:
   • username
   • email
   • password
-  • emergency contacts
+  - has_many emergency_contacts
   - has_many medications
   - has_many conditions
   - has_many doctors
@@ -29,4 +29,10 @@ MODELS:
   • name
   • time
   - has_many medications
+  - belongs_to user
+
+5. Emergency Contact
+  • name
+  • phone number
+  • relationship to patient
   - belongs_to user
