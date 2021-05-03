@@ -27,7 +27,6 @@ MODELS:
 
 4. Condition
   • name
-  • time
   - has_many medications
   - belongs_to user
 

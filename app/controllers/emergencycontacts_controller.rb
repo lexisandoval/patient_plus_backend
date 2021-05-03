@@ -1,0 +1,2 @@
+class EmergencycontactsController < ApplicationController
+end
