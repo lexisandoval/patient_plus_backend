@@ -1,2 +1,2 @@
-class ConditionsController < ApplicationController
+class Api::V1::ConditionsController < ApplicationController
 end
