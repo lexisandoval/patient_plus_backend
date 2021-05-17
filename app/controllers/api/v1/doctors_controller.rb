@@ -7,7 +7,7 @@ class Api::V1::DoctorsController < ApplicationController
     if logged_in?
       @doctors = current_user.doctors
 
-      render json: @doctors
+      render json: DoctorSerializer.new(@doctors)
     else
       render json: {
         error: "You must be logged in to view doctors."
