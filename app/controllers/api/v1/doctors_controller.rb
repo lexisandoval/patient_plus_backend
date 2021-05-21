@@ -15,10 +15,15 @@ class Api::V1::DoctorsController < ApplicationController
     end
   end
 
+  def show
+    doctor_json = DoctorSerializer.new(@doctor).serializable_hash
+    render json: doctor_json
+  end
+
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      render json: @doctor, status: :created
+      render json: DoctorSerializer.new(@doctor), status: :created
     else
       resp = {
         error: @doctor.errors.full_messages.to_sentence
