@@ -32,6 +32,17 @@ class Api::V1::DoctorsController < ApplicationController
     end
   end
 
+  def update
+    if @doctor.update(doctor_params)
+      render json:  DoctorSerializer.new(@doctor), status: :ok
+    else
+      error_resp = {
+        error: @doctor.errors.full_messages.to_sentence
+      }
+      render json: error_resp, status: :unprocessable_entity
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_doctor
