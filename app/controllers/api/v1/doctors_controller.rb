@@ -15,6 +15,18 @@ class Api::V1::DoctorsController < ApplicationController
     end
   end
 
+  def create
+    @doctor = Doctor.new(doctor_params)
+    if @doctor.save
+      render json: @doctor, status: :created
+    else
+      resp = {
+        error: @doctor.errors.full_messages.to_sentence
+      }
+      render json: resp, status: :unprocessable_entity
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_doctor
