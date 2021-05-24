@@ -1,12 +1,9 @@
 class Api::V1::DoctorsController < ApplicationController
   before_action :set_doctor, only: [:show, :update, :destroy]
 
-  # GET /users
   def index
-    # @doctors = Doctor.all
     if logged_in?
       @doctors = current_user.doctors
-
       render json: DoctorSerializer.new(@doctors)
     else
       render json: {
@@ -45,7 +42,7 @@ class Api::V1::DoctorsController < ApplicationController
 
   def destroy
     if @doctor.destroy
-      render json:  { data: "Doctor successfully deleted." }, status: :ok
+      render json: { data: "Doctor successfully deleted." }, status: :ok
     else
       error_resp = {
         error: "Doctor not found and not deleted."
@@ -55,12 +52,10 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
   def set_doctor
     @doctor = Doctor.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def doctor_params
     params.require(:doctor).permit(:name, :phone_number, :specialty, :location)
   end
