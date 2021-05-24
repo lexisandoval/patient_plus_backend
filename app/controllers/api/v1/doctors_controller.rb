@@ -43,6 +43,17 @@ class Api::V1::DoctorsController < ApplicationController
     end
   end
 
+  def destroy
+    if @doctor.destroy
+      render json:  { data: "Doctor successfully deleted." }, status: :ok
+    else
+      error_resp = {
+        error: "Doctor not found and not deleted."
+      }
+      render json: error_resp, status: :unprocessable_entity
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_doctor
