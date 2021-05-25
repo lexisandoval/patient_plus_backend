@@ -1,4 +1,4 @@
 class MedicationSerializer
   include JSONAPI::Serializer
-  attributes :name, :prescription
+  attributes :name, :prescription, :doctor, :condition
 end
