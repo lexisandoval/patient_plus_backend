@@ -29,16 +29,6 @@ ActiveRecord::Schema.define(version: 2021_05_03_174636) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "emergencycontacts", force: :cascade do |t|
-    t.string "name"
-    t.string "phone_number"
-    t.string "relationship"
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_emergencycontacts_on_user_id"
-  end
-
   create_table "medications", force: :cascade do |t|
     t.string "name"
     t.string "prescription"
@@ -62,7 +52,6 @@ ActiveRecord::Schema.define(version: 2021_05_03_174636) do
   end
 
   add_foreign_key "conditions", "users"
-  add_foreign_key "emergencycontacts", "users"
   add_foreign_key "medications", "conditions"
   add_foreign_key "medications", "doctors"
   add_foreign_key "medications", "users"
