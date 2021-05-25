@@ -3,7 +3,9 @@ class Api::V1::DoctorsController < ApplicationController
 
   def index
     if logged_in?
-      @doctors = current_user.doctors
+      # @doctors = current_user.doctors
+      @doctors = Doctor.all
+
       render json: DoctorSerializer.new(@doctors)
     else
       render json: {
@@ -18,6 +20,7 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def create
+    # @doctor = current_user.doctors.build(doctor_params)
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
       render json: DoctorSerializer.new(@doctor), status: :created
