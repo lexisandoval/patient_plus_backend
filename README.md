@@ -1,24 +1,42 @@
-# README
+# PatientPlus API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails API for PatientPlus, a web application that allows users to log medical information. 
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Clone this repository and then execute:
 
-* System dependencies
+    $ bundle install
+    $ rails db:migrate
+    $ rails db:seed
 
-* Configuration
+## Usage
 
-* Database creation
+To run the application, run the command.. 
+    
+    $ rails s 
+    
+..and open your browser to http://localhost:3000.
 
-* Database initialization
+Once open, you may view user, medication, condition, and doctor data.
 
-* How to run the test suite
+Endpoints: 
+    
+    /api/v1/users
+    /api/v1/medications
+    /api/v1/conditions
+    /api/v1/doctors
+        
+You may visit the PatientPlus frontend repository [here](https://github.com/lexisandoval/patient_plus_frontend.git).
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributing
 
-* Deployment instructions
+Bug reports and pull requests are welcome on GitHub at https://github.com/lexisandoval/patient_plus_backend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/lexisandoval/patient_plus_backend/blob/master/CODE_OF_CONDUCT.md).
 
-* ...
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the PatientPlus project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/lexisandoval/patient_plus_backend/blob/master/CODE_OF_CONDUCT.md).
