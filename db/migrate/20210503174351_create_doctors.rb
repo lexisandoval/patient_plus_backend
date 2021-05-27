@@ -5,6 +5,7 @@ class CreateDoctors < ActiveRecord::Migration[6.1]
       t.string :phone_number
       t.string :specialty
       t.string :location
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

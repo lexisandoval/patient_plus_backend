@@ -20,8 +20,8 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def create
-    # @doctor = current_user.doctors.build(doctor_params)
-    @doctor = Doctor.new(doctor_params)
+    @doctor = current_user.doctors.build(doctor_params)
+    # @doctor = Doctor.new(doctor_params)
     if @doctor.save
       render json: DoctorSerializer.new(@doctor), status: :created
     else
