@@ -18,7 +18,6 @@ class Api::V1::MedicationsController < ApplicationController
   end
 
   def create
-    # @medication = Medication.new(medication_params)
     @medication = current_user.medications.build(medication_params)
     if @medication.save
       render json: MedicationSerializer.new(@medication), status: :created

@@ -3,7 +3,6 @@ class Api::V1::DoctorsController < ApplicationController
 
   def index
     if logged_in?
-      # @doctors = current_user.doctors
       @doctors = Doctor.all
 
       render json: DoctorSerializer.new(@doctors)
@@ -60,6 +59,6 @@ class Api::V1::DoctorsController < ApplicationController
   end
 
   def doctor_params
-    params.require(:doctor).permit(:name, :phone_number, :specialty, :location)
+    params.require(:doctor).permit(:name, :phone_number, :specialty, :location, :user_id)
   end
 end
