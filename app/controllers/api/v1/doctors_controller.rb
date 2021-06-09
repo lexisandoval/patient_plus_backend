@@ -3,7 +3,7 @@ class Api::V1::DoctorsController < ApplicationController
 
   def index
     if logged_in?
-      @doctors = Doctor.all
+      @doctors = current_user.doctors
 
       render json: DoctorSerializer.new(@doctors)
     else
